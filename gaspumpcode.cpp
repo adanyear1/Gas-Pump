@@ -3,70 +3,64 @@
 
 using namespace std;
 
-int main()
+int main ()
 {
-    int lowgasprice = 2.5,
-        midgasprice = 2.7,
-        highgasprice = 2.9,
-        choice,
-        Diesel = 3.5;
-    char Octane;    
-    float spend;
-    float gallon = 3.78541178;
-    float nogallons = spend/gallon;  
+    char octane;
+    const double lowgasprice = 2.50,
+              midgasprice = 2.70,
+              highgasprice = 2.90,
+              Diesel = 3.50;
+    float spend,
+          nogallons;               
+          
+    cout << "Welcome To El Pariente Gas Station" << endl;
+    cout << "Which Fuel Type Would You Like: " << endl;
+    cout << "A. Unleaded Fuel 87" << endl;
+    cout << "B. Plus Unleaded Fuel 89" << endl;
+    cout << "C. Premium Unleaded Fuel 93" << endl;
+    cout << "D. Low Sulfur Diesel" << endl;
+    cin >> octane;
     
-    cout<<"Welcome To El Pariente Gas Station" << endl;
-    cout << "Would You Like: " << endl;
-    cout << "1. Gasoline " << endl; 
-    cout << "2. Diesel " << endl;
-    cin >> choice;
+    switch (octane)
+    {
+        case 'A':
+            cout << "Cost Per Gallon $" << lowgasprice << endl;
+            cout << "How Much Would Like to Spend On Fuel?" << endl; 
+            cin >> spend;
+            cout << "You Spent a total of $" << spend << " On Fuel" << endl;
+            nogallons = spend/lowgasprice;
+            cout << "Gallons: " << nogallons << endl;
+            break;
+        case 'B':
+            cout << "Cost Per Gallon $" << midgasprice << endl;
+            cout << "How Much Would Like to Spend On Fuel?" << endl; 
+            cin >> spend;
+            cout << "You Spent a total of $" << spend << " On Fuel" << endl;
+            nogallons = spend/midgasprice;
+            cout << "Gallons: " << nogallons << endl;
+            break;
+        case 'C':
+            cout << "Cost Per Gallon $" << highgasprice << endl;
+            cout << "How Much Would Like to Spend On Fuel?" << endl; 
+            cin >> spend;
+            cout << "You Spent a total of $" << spend << " On Fuel" << endl;
+            nogallons = spend/highgasprice;
+            cout << "Gallons: " << nogallons << endl;
+            //break;
+        case 'D':
+            cout << "Cost Per Gallon $" << Diesel << endl;
+            cout << "How Much Would Like to Spend On Fuel?" << endl; 
+            cin >> spend;
+            cout << "You Spent a total of $" << spend << " On Fuel" << endl;
+            nogallons = spend/Diesel;
+            cout << "Gallons: " << nogallons << endl;
+            break;
+        default: 
+            cout << "Invalid Entry " << endl;
+    }
     
-    if (choice == 1)
-    {
-        cout << "Choose Octane: " << endl;
-        cout << "A. 87 " << endl;
-        cout << "B. 89 " << endl;
-        cout << "C. 91 " << endl;
-        cin >> Octane;
-        switch (Octane)
-        {
-            case 'A':
-                    cout << "Total Cost Per Gallon is $";
-                    cout << lowgasprice << endl;
-                    cout << "How Much Would You Like To Spend on Gasoline Today?" << endl;
-                    cout << "$";
-                    cin >> spend;
-                    cout << "Gallons: " << nogallons << endl;
-            break;
-            case 'B':
-                    cout << "Total Cost Per Gallon is $";
-                    cout << midgasprice << endl;
-                    cout << "How Much Would You Like To Spend on Gasoline Today?" << endl;
-                    cout << "$";
-                    cin >> spend;
-                    cout << "Gallons: " << nogallons << endl;
-            break;
-            case 'C':
-                    cout << "Total Cost Per Gallon is $";
-                    cout << highgasprice << endl;
-                    cout << "How Much Would You Like To Spend on Gasoline Today?" << endl;
-                    cout << "$";
-                    cin >> spend;
-                    cout << "Gallons: " << nogallons << endl;
-            break;
-        }
-    }
-    else if (choice == 2)
-    {
-        cout << "How Much Would You Like To Spend on Diesel Today?" << endl;
-        cout << "$";
-        cin >> spend;
-        cout << "Gallons: " << nogallons << endl;
-    }
-    else
-    {
-        cout << "Please Enter 1 for Gasoline or 2 for Diesel" << endl;
-    }
-
+    cout << "Thank You For Coming To El Pariente Gas Station\n";
+    cout << "Come Again" << endl;
+    
     return 0;
 }
